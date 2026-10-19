@@ -54,6 +54,12 @@ export default function LandingPage() {
         </span>
         <div className="flex items-center gap-5">
           <Link
+            href="/ontowiki"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Timeline
+          </Link>
+          <Link
             href="https://github.com/lucasastorian/llmwiki"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
