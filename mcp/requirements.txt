@@ -1,6 +1,7 @@
 # 1.30.0 fixes CVE-2026-59951 (unbounded Streamable HTTP sessions).
-# Stay on the 1.x line; 2.x changes the server API this package calls.
-mcp[cli]>=1.30.0,<2
+# Pinned exactly: pip-audit's dry-run resolved a lower bound to 1.28.1 on CI.
+# 2.x changes the server API this package calls, so stay on this 1.x release.
+mcp[cli]==1.30.0
 asyncpg==0.31.0
 pyjwt[crypto]==2.15.1
 pydantic==2.13.4
