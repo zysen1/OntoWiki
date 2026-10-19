@@ -1,0 +1,1 @@
+"""OntoWiki MCP server."""

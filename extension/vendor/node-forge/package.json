@@ -1,0 +1,21 @@
+{
+  "name": "node-forge",
+  "version": "1.4.1",
+  "description": "Local backport of digitalbazaar/forge#1152 (CVE-2026-85393 / GHSA-86w9-cpqp-85rv) on top of 1.4.0. Replace this directory when upstream publishes a fixed release. Browser bundles in dist/ were omitted; Node resolves lib/.",
+  "homepage": "https://github.com/digitalbazaar/forge",
+  "license": "(BSD-3-Clause OR GPL-2.0)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/digitalbazaar/forge"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "flash",
+    "LICENSE",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">= 6.13.0"
+  }
+}

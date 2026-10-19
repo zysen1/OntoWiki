@@ -1,0 +1,280 @@
+{
+  "corpus": "agent-research",
+  "details": [
+    {
+      "as_of": null,
+      "gold_answer": "Associative retrieval",
+      "gold_sources": [
+        "2025-02-20-hipporag2.md"
+      ],
+      "id": "hippo-introduces",
+      "ontowiki": {
+        "answer": "Associative retrieval",
+        "answer_hit": 1,
+        "context_tokens": 82,
+        "source_recall": 1.0,
+        "sources": [
+          "2025-02-20-hipporag2.md"
+        ],
+        "traceable": 1
+      },
+      "question": "What concept does HippoRAG 2 introduce?",
+      "vector_rag": {
+        "answer": "Reading note \u2014 HippoRAG 2\n\nHippoRAG 2 (arXiv 2502.14802) reframes multi-hop question answering as associative retrieval over a knowledge graph rather than a single vector lookup.",
+        "answer_hit": 1,
+        "context_tokens": 145,
+        "source_recall": 1.0,
+        "sources": [
+          "2025-02-20-hipporag2.md",
+          "2026-06-02-llmwiki-ships.md",
+          "2026-10-14-interactive.md"
+        ],
+        "traceable": 1
+      }
+    },
+    {
+      "as_of": null,
+      "gold_answer": "MAST",
+      "gold_sources": [
+        "2025-03-17-mast.md"
+      ],
+      "id": "mast-taxonomy",
+      "ontowiki": {
+        "answer": "MAST",
+        "answer_hit": 1,
+        "context_tokens": 69,
+        "source_recall": 1.0,
+        "sources": [
+          "2025-03-17-mast.md"
+        ],
+        "traceable": 1
+      },
+      "question": "Which paper introduces a failure taxonomy?",
+      "vector_rag": {
+        "answer": "Reading note \u2014 MAST\n\nMAST (arXiv 2503.13657) groups multi-agent failures into a failure taxonomy covering specification, inter-agent alignment, and verification.",
+        "answer_hit": 1,
+        "context_tokens": 132,
+        "source_recall": 1.0,
+        "sources": [
+          "2025-03-17-mast.md",
+          "2026-10-14-interactive.md",
+          "2026-05-20-freshness-dissent.md"
+        ],
+        "traceable": 1
+      }
+    },
+    {
+      "as_of": null,
+      "gold_answer": "Agent memory",
+      "gold_sources": [
+        "2025-04-18-mem0.md"
+      ],
+      "id": "mem0-memory",
+      "ontowiki": {
+        "answer": "Agent memory",
+        "answer_hit": 1,
+        "context_tokens": 62,
+        "source_recall": 1.0,
+        "sources": [
+          "2025-04-18-mem0.md"
+        ],
+        "traceable": 1
+      },
+      "question": "What concept does Mem0 introduce?",
+      "vector_rag": {
+        "answer": "The llmwiki system implements the LLM Wiki concept as a maintained workspace.",
+        "answer_hit": 0,
+        "context_tokens": 140,
+        "source_recall": 1.0,
+        "sources": [
+          "2026-06-02-llmwiki-ships.md",
+          "2026-10-14-interactive.md",
+          "2025-04-18-mem0.md"
+        ],
+        "traceable": 0
+      }
+    },
+    {
+      "as_of": "2026-04-04",
+      "gold_answer": "no open implementation",
+      "gold_sources": [
+        "2026-04-04-karpathy-gist.md"
+      ],
+      "id": "open-impl-april",
+      "ontowiki": {
+        "answer": "no open implementation",
+        "answer_hit": 1,
+        "context_tokens": 61,
+        "source_recall": 1.0,
+        "sources": [
+          "2026-04-04-karpathy-gist.md"
+        ],
+        "traceable": 1
+      },
+      "question": "What implementation status did the notes record for the LLM Wiki idea?",
+      "vector_rag": {
+        "answer": "Reading note \u2014 llmwiki ships\n\nlucasastorian/llmwiki is an open implementation of the LLM Wiki idea.",
+        "answer_hit": 0,
+        "context_tokens": 152,
+        "source_recall": 1.0,
+        "sources": [
+          "2026-06-02-llmwiki-ships.md",
+          "2026-04-04-karpathy-gist.md",
+          "2026-07-09-progressive.md"
+        ],
+        "traceable": 0
+      }
+    },
+    {
+      "as_of": "2026-10-19",
+      "gold_answer": "open implementation of the LLM Wiki idea",
+      "gold_sources": [
+        "2026-06-02-llmwiki-ships.md"
+      ],
+      "id": "open-impl-october",
+      "ontowiki": {
+        "answer": "open implementation of the LLM Wiki idea",
+        "answer_hit": 1,
+        "context_tokens": 79,
+        "source_recall": 1.0,
+        "sources": [
+          "2026-06-02-llmwiki-ships.md"
+        ],
+        "traceable": 1
+      },
+      "question": "What implementation status did the notes record for the LLM Wiki idea?",
+      "vector_rag": {
+        "answer": "Reading note \u2014 llmwiki ships\n\nlucasastorian/llmwiki is an open implementation of the LLM Wiki idea.",
+        "answer_hit": 1,
+        "context_tokens": 152,
+        "source_recall": 1.0,
+        "sources": [
+          "2026-06-02-llmwiki-ships.md",
+          "2026-04-04-karpathy-gist.md",
+          "2026-07-09-progressive.md"
+        ],
+        "traceable": 1
+      }
+    },
+    {
+      "as_of": null,
+      "gold_answer": "BEACON-SP",
+      "gold_sources": [
+        "2026-10-07-beacon.md"
+      ],
+      "id": "beacon-ontology",
+      "ontowiki": {
+        "answer": "BEACON-SP",
+        "answer_hit": 1,
+        "context_tokens": 109,
+        "source_recall": 1.0,
+        "sources": [
+          "2026-10-07-beacon.md"
+        ],
+        "traceable": 1
+      },
+      "question": "Which paper constrains GraphRAG with an ontology constraint?",
+      "vector_rag": {
+        "answer": "Reading note \u2014 BEACON-SP\n\nBEACON-SP (arXiv 2610.09026) constrains GraphRAG with an ontology constraint so extracted edges have to match declared types.",
+        "answer_hit": 1,
+        "context_tokens": 160,
+        "source_recall": 1.0,
+        "sources": [
+          "2026-10-07-beacon.md",
+          "2025-11-08-ontology-rag.md",
+          "2026-05-20-freshness-dissent.md"
+        ],
+        "traceable": 1
+      }
+    },
+    {
+      "as_of": null,
+      "gold_answer": "Layered disclosure",
+      "gold_sources": [
+        "2026-07-09-progressive.md"
+      ],
+      "id": "progressive",
+      "ontowiki": {
+        "answer": "Layered disclosure",
+        "answer_hit": 1,
+        "context_tokens": 87,
+        "source_recall": 1.0,
+        "sources": [
+          "2026-07-09-progressive.md"
+        ],
+        "traceable": 1
+      },
+      "question": "What concept does the Progressive Disclosure paper propose?",
+      "vector_rag": {
+        "answer": "Reading note \u2014 progressive disclosure\n\nProgressive Disclosure for an LLM-maintained wiki (arXiv 2607.04576) proposes layered disclosure: index, then summary, then the page, then the source quote.",
+        "answer_hit": 1,
+        "context_tokens": 160,
+        "source_recall": 1.0,
+        "sources": [
+          "2026-07-09-progressive.md",
+          "2026-06-02-llmwiki-ships.md",
+          "2026-06-11-streaming.md"
+        ],
+        "traceable": 1
+      }
+    },
+    {
+      "as_of": null,
+      "gold_answer": "Auditability",
+      "gold_sources": [
+        "2026-10-14-interactive.md"
+      ],
+      "id": "auditability",
+      "ontowiki": {
+        "answer": "Auditability",
+        "answer_hit": 1,
+        "context_tokens": 73,
+        "source_recall": 1.0,
+        "sources": [
+          "2026-10-14-interactive.md"
+        ],
+        "traceable": 1
+      },
+      "question": "What concept does Interactive GraphRAG introduce?",
+      "vector_rag": {
+        "answer": "Reading note \u2014 interactive GraphRAG\n\nInteractive GraphRAG Workspace (arXiv 2610.23559) introduces auditability so a reader can see why a memory page changed.",
+        "answer_hit": 1,
+        "context_tokens": 140,
+        "source_recall": 1.0,
+        "sources": [
+          "2026-10-14-interactive.md",
+          "2026-06-02-llmwiki-ships.md",
+          "2025-11-08-ontology-rag.md"
+        ],
+        "traceable": 1
+      }
+    }
+  ],
+  "lightrag": {
+    "reason": "LightRAG was not executed. Set ONTOWIKI_LIGHTRAG=1 only when an LLM endpoint and a built LightRAG index are available. No score is invented in their place.",
+    "status": "not_run"
+  },
+  "notes": {
+    "answer_hit": "1 when the gold answer string appears in the system answer, case-insensitive.",
+    "context_tokens": "Estimated tokens (characters/4) in the context the system returned for that question.",
+    "lightrag": "Left not-run. LightRAG needs an LLM endpoint; this harness does not fabricate that run.",
+    "ontowiki": "Answer comes from ontology-checked claims filtered by transaction time (as_of). Context is the progressive-disclosure bundle: index, answer, valid time, quote.",
+    "source_recall": "Fraction of gold source filenames among the sources the system used. OntoWiki cites the episodes of the claims it answered from. Vector RAG cites its top-3 chunks.",
+    "traceable": "1 when the source that produced the answer is one of the gold sources.",
+    "vector_rag": "TF-IDF over source prose. The ontology block is stripped before indexing. The answer is the best-overlapping sentence in the top chunk. as_of is ignored."
+  },
+  "ontowiki": {
+    "answer_hit": 1.0,
+    "mean_context_tokens": 77.8,
+    "source_recall": 1.0,
+    "traceable": 1.0
+  },
+  "questions": 8,
+  "vector_rag": {
+    "answer_hit": 0.75,
+    "mean_context_tokens": 147.6,
+    "source_recall": 1.0,
+    "traceable": 0.75
+  },
+  "vector_rag_k": 3
+}

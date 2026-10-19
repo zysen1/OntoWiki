@@ -1,0 +1,54 @@
+{
+  "questions": [
+    {
+      "id": "hippo-introduces",
+      "question": "What concept does HippoRAG 2 introduce?",
+      "gold_answer": "Associative retrieval",
+      "gold_sources": ["2025-02-20-hipporag2.md"]
+    },
+    {
+      "id": "mast-taxonomy",
+      "question": "Which paper introduces a failure taxonomy?",
+      "gold_answer": "MAST",
+      "gold_sources": ["2025-03-17-mast.md"]
+    },
+    {
+      "id": "mem0-memory",
+      "question": "What concept does Mem0 introduce?",
+      "gold_answer": "Agent memory",
+      "gold_sources": ["2025-04-18-mem0.md"]
+    },
+    {
+      "id": "open-impl-april",
+      "question": "What implementation status did the notes record for the LLM Wiki idea?",
+      "as_of": "2026-04-04",
+      "gold_answer": "no open implementation",
+      "gold_sources": ["2026-04-04-karpathy-gist.md"]
+    },
+    {
+      "id": "open-impl-october",
+      "question": "What implementation status did the notes record for the LLM Wiki idea?",
+      "as_of": "2026-10-19",
+      "gold_answer": "open implementation of the LLM Wiki idea",
+      "gold_sources": ["2026-06-02-llmwiki-ships.md"]
+    },
+    {
+      "id": "beacon-ontology",
+      "question": "Which paper constrains GraphRAG with an ontology constraint?",
+      "gold_answer": "BEACON-SP",
+      "gold_sources": ["2026-10-07-beacon.md"]
+    },
+    {
+      "id": "progressive",
+      "question": "What concept does the Progressive Disclosure paper propose?",
+      "gold_answer": "Layered disclosure",
+      "gold_sources": ["2026-07-09-progressive.md"]
+    },
+    {
+      "id": "auditability",
+      "question": "What concept does Interactive GraphRAG introduce?",
+      "gold_answer": "Auditability",
+      "gold_sources": ["2026-10-14-interactive.md"]
+    }
+  ]
+}

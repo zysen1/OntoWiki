@@ -1,0 +1,4 @@
+pydantic==2.13.4
+pyyaml==6.0.3
+# Same pin as mcp/requirements.txt: 1.30.0 fixes CVE-2026-59951.
+mcp[cli]==1.30.0
