@@ -1,4 +1,6 @@
-mcp[cli]==1.28.1
+# 1.30.0 fixes CVE-2026-59951 (unbounded Streamable HTTP sessions).
+# Stay on the 1.x line; 2.x changes the server API this package calls.
+mcp[cli]>=1.30.0,<2
 asyncpg==0.31.0
 pyjwt[crypto]==2.15.1
 pydantic==2.13.4
@@ -9,6 +11,7 @@ aioboto3==15.5.0
 sentry-sdk==2.59.0
 aiosqlite==0.22.1
 # Pinned to override vulnerable transitive resolutions.
+anyio==4.14.2
 aiohttp==3.14.3
 cryptography==50.0.0
 python-multipart==0.0.31
