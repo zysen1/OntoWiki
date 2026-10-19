@@ -1,0 +1,98 @@
+name: agent-research
+version: "1.0"
+description: >
+  Reading notes on agent research. Claims are typed, grounded in a quote,
+  and given a valid time. This ontology is a plugin: point the compiler at
+  another file to compile a different domain.
+
+entity_types:
+  Paper:
+    description: A paper, gist, or other named publication.
+    folder: papers
+    properties:
+      arxiv_id: {type: string}
+      published: {type: string}
+  Concept:
+    description: An idea the notes bother to name.
+    folder: concepts
+  Method:
+    description: A retrieval or compilation method the notes compare.
+    folder: methods
+  Task:
+    description: A kind of question used when the notes compare methods.
+    folder: tasks
+  System:
+    description: A software system named in the notes.
+    folder: systems
+    properties:
+      repo: {type: string}
+
+relation_types:
+  INTRODUCES:
+    description: The publication presents the object as its contribution.
+    source: [Paper]
+    target: [Concept, Method]
+    functional: false
+    on_conflict: coexist
+  PROPOSES:
+    description: The publication argues for the object.
+    source: [Paper]
+    target: [Concept, Method]
+    functional: false
+    on_conflict: coexist
+  EVALUATED_ON:
+    description: The publication reports a comparison on this task.
+    source: [Paper]
+    target: [Task]
+    functional: false
+    on_conflict: coexist
+  CONSTRAINS:
+    description: The subject applies the object as a schema constraint.
+    source: [Paper, System]
+    target: [Concept]
+    functional: false
+    on_conflict: coexist
+  TARGETS:
+    description: The publication is about this method or concept.
+    source: [Paper]
+    target: [Method, Concept, System]
+    functional: false
+    on_conflict: coexist
+  IMPLEMENTS:
+    description: The system is an implementation of the concept.
+    source: [System]
+    target: [Concept]
+    functional: false
+    on_conflict: coexist
+  BEST_METHOD:
+    description: Which method the notes currently call best for a task. Disagreement stays visible.
+    source: [Task]
+    target: [Method]
+    functional: true
+    on_conflict: contradict
+  HAS_OPEN_IMPLEMENTATION:
+    description: Whether the notes record an open implementation. A later note supersedes an earlier one.
+    source: [Concept]
+    target: []
+    allow_literal: true
+    literal_type: string
+    functional: true
+    on_conflict: supersede
+  MATURITY:
+    description: A reviewable maturity label for a concept.
+    source: [Concept]
+    target: []
+    allow_literal: true
+    literal_type: string
+    functional: true
+    on_conflict: supersede
+    stale_after_days: 400
+
+aliases:
+  entity_types:
+    article: Paper
+    preprint: Paper
+  predicates:
+    introduces: INTRODUCES
+    proposes: PROPOSES
+    evaluated_on: EVALUATED_ON

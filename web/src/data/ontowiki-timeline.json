@@ -1,0 +1,586 @@
+{
+  "claims": [
+    {
+      "episode": "2025-02-20-hipporag2.md",
+      "episodeTitle": "Reading note \u2014 HippoRAG 2",
+      "id": "49414227e9396c03",
+      "ingestedAt": "2025-02-20",
+      "invalidatedAt": null,
+      "object": "Multi-hop QA",
+      "predicate": "EVALUATED_ON",
+      "quote": "The note treats that contribution as evaluated on multi-hop QA.",
+      "reviewAfter": null,
+      "source": "0e66f8534f8f0251",
+      "status": "active",
+      "subject": "HippoRAG 2",
+      "target": "4e1459ab7daf4442",
+      "validFrom": "2025-02-20",
+      "validTo": null
+    },
+    {
+      "episode": "2025-02-20-hipporag2.md",
+      "episodeTitle": "Reading note \u2014 HippoRAG 2",
+      "id": "4c4c5a6e3b648e53",
+      "ingestedAt": "2025-02-20",
+      "invalidatedAt": null,
+      "object": "Associative retrieval",
+      "predicate": "INTRODUCES",
+      "quote": "HippoRAG 2 (arXiv 2502.14802) reframes multi-hop question answering as associative retrieval over a knowledge graph rather than a single vector lookup.",
+      "reviewAfter": null,
+      "source": "0e66f8534f8f0251",
+      "status": "active",
+      "subject": "HippoRAG 2",
+      "target": "b875571d4b6632c9",
+      "validFrom": "2025-02-20",
+      "validTo": null
+    },
+    {
+      "episode": "2025-03-17-mast.md",
+      "episodeTitle": "Reading note \u2014 MAST",
+      "id": "b72fc2cd5cd169ae",
+      "ingestedAt": "2025-03-17",
+      "invalidatedAt": null,
+      "object": "Failure taxonomy",
+      "predicate": "INTRODUCES",
+      "quote": "MAST (arXiv 2503.13657) groups multi-agent failures into a failure taxonomy covering specification, inter-agent alignment, and verification.",
+      "reviewAfter": null,
+      "source": "169c020ed42931d3",
+      "status": "active",
+      "subject": "MAST",
+      "target": "41575af67e3b0220",
+      "validFrom": "2025-03-17",
+      "validTo": null
+    },
+    {
+      "episode": "2025-04-18-mem0.md",
+      "episodeTitle": "Reading note \u2014 Mem0",
+      "id": "2959eaca13ee087f",
+      "ingestedAt": "2025-04-18",
+      "invalidatedAt": null,
+      "object": "key-value layer",
+      "predicate": "MATURITY",
+      "quote": "This note labels that layer a key-value layer and flags it for review after the summer.",
+      "reviewAfter": "2025-08-01",
+      "source": "eb6d2e128f721717",
+      "status": "active",
+      "subject": "Agent memory",
+      "target": "lit:5632530493776183",
+      "validFrom": "2025-04-18",
+      "validTo": null
+    },
+    {
+      "episode": "2025-04-18-mem0.md",
+      "episodeTitle": "Reading note \u2014 Mem0",
+      "id": "d46e553b69caa744",
+      "ingestedAt": "2025-04-18",
+      "invalidatedAt": null,
+      "object": "Agent memory",
+      "predicate": "INTRODUCES",
+      "quote": "Mem0 (arXiv 2504.19413) packages agent memory as a layer that sits beside the model rather than inside a prompt.",
+      "reviewAfter": null,
+      "source": "577782c3285eb5b9",
+      "status": "active",
+      "subject": "Mem0",
+      "target": "eb6d2e128f721717",
+      "validFrom": "2025-04-18",
+      "validTo": null
+    },
+    {
+      "episode": "2025-11-08-ontology-rag.md",
+      "episodeTitle": "Reading note \u2014 ontology learning and RAG",
+      "id": "d45f3cd46d3c8543",
+      "ingestedAt": "2025-11-08",
+      "invalidatedAt": null,
+      "object": "Ontology constraint",
+      "predicate": "PROPOSES",
+      "quote": "A November 2025 survey (arXiv 2511.05991) proposes an ontology constraint as a way to shape retrieval-augmented generation.",
+      "reviewAfter": null,
+      "source": "0a67edb03c5c51b6",
+      "status": "active",
+      "subject": "Ontology Learning for RAG",
+      "target": "60b652e3ad7c5f32",
+      "validFrom": "2025-11-08",
+      "validTo": null
+    },
+    {
+      "episode": "2025-11-08-ontology-rag.md",
+      "episodeTitle": "Reading note \u2014 ontology learning and RAG",
+      "id": "f7939019ba47e65c",
+      "ingestedAt": "2025-11-08",
+      "invalidatedAt": null,
+      "object": "GraphRAG",
+      "predicate": "TARGETS",
+      "quote": "The survey targets GraphRAG-style graphs in particular.",
+      "reviewAfter": null,
+      "source": "0a67edb03c5c51b6",
+      "status": "active",
+      "subject": "Ontology Learning for RAG",
+      "target": "dedeacaa41080435",
+      "validFrom": "2025-11-08",
+      "validTo": null
+    },
+    {
+      "episode": "2026-04-04-karpathy-gist.md",
+      "episodeTitle": "Reading note \u2014 Karpathy's LLM Wiki gist",
+      "id": "133a5520cec77d1d",
+      "ingestedAt": "2026-04-04",
+      "invalidatedAt": null,
+      "object": "Knowledge compilation",
+      "predicate": "PROPOSES",
+      "quote": "Karpathy's LLM Wiki gist of 4 Apr 2026 proposes knowledge compilation: keep a maintained wiki instead of retrieving sources again on every question.",
+      "reviewAfter": null,
+      "source": "75954fea164bd81a",
+      "status": "active",
+      "subject": "Karpathy LLM Wiki",
+      "target": "e7a0a394d33138de",
+      "validFrom": "2026-04-04",
+      "validTo": null
+    },
+    {
+      "episode": "2026-04-04-karpathy-gist.md",
+      "episodeTitle": "Reading note \u2014 Karpathy's LLM Wiki gist",
+      "id": "8cfda428a11ece88",
+      "ingestedAt": "2026-04-04",
+      "invalidatedAt": "2026-06-02",
+      "object": "no open implementation",
+      "predicate": "HAS_OPEN_IMPLEMENTATION",
+      "quote": "This note records no open implementation.",
+      "reviewAfter": null,
+      "source": "b1a3ff316b0e497c",
+      "status": "superseded",
+      "subject": "LLM Wiki",
+      "target": "lit:aee80da86ffbe888",
+      "validFrom": "2026-04-04",
+      "validTo": "2026-06-02"
+    },
+    {
+      "episode": "2026-05-12-compiled-vs-rag.md",
+      "episodeTitle": "Reading note \u2014 vector RAG versus a compiled wiki",
+      "id": "18287e69c5c40c57",
+      "ingestedAt": "2026-05-12",
+      "invalidatedAt": null,
+      "object": "Synthesis questions",
+      "predicate": "EVALUATED_ON",
+      "quote": "The preregistered comparison (arXiv 2605.18490) evaluates an LLM-compiled wiki against single-round vector RAG on synthesis questions.",
+      "reviewAfter": null,
+      "source": "b68ba55c26bc5fd6",
+      "status": "active",
+      "subject": "Vector RAG vs Compiled Wiki",
+      "target": "cf71f2e64b55446c",
+      "validFrom": "2026-05-12",
+      "validTo": null
+    },
+    {
+      "episode": "2026-05-12-compiled-vs-rag.md",
+      "episodeTitle": "Reading note \u2014 vector RAG versus a compiled wiki",
+      "id": "81b8ffff9fabbab1",
+      "ingestedAt": "2026-05-12",
+      "invalidatedAt": null,
+      "object": "Knowledge compilation",
+      "predicate": "PROPOSES",
+      "quote": "It proposes knowledge compilation as the method under test.",
+      "reviewAfter": null,
+      "source": "b68ba55c26bc5fd6",
+      "status": "active",
+      "subject": "Vector RAG vs Compiled Wiki",
+      "target": "e7a0a394d33138de",
+      "validFrom": "2026-05-12",
+      "validTo": null
+    },
+    {
+      "episode": "2026-05-20-freshness-dissent.md",
+      "episodeTitle": "Lab note \u2014 a dissent on freshness",
+      "id": "b5be87ce22dc8315",
+      "ingestedAt": "2026-05-20",
+      "invalidatedAt": null,
+      "object": "Vector RAG",
+      "predicate": "BEST_METHOD",
+      "quote": "This dissent holds that vector RAG remains the best method for freshness questions.",
+      "reviewAfter": null,
+      "source": "a51850e8cd9a492f",
+      "status": "contradicted",
+      "subject": "Freshness questions",
+      "target": "3aa200521cde397b",
+      "validFrom": "2026-05-20",
+      "validTo": null
+    },
+    {
+      "episode": "2026-06-02-llmwiki-ships.md",
+      "episodeTitle": "Reading note \u2014 llmwiki ships",
+      "id": "962a916d588c0295",
+      "ingestedAt": "2026-06-02",
+      "invalidatedAt": null,
+      "object": "open implementation of the LLM Wiki idea",
+      "predicate": "HAS_OPEN_IMPLEMENTATION",
+      "quote": "lucasastorian/llmwiki is an open implementation of the LLM Wiki idea.",
+      "reviewAfter": null,
+      "source": "b1a3ff316b0e497c",
+      "status": "active",
+      "subject": "LLM Wiki",
+      "target": "lit:2117b3910a8c212b",
+      "validFrom": "2026-06-02",
+      "validTo": null
+    },
+    {
+      "episode": "2026-06-02-llmwiki-ships.md",
+      "episodeTitle": "Reading note \u2014 llmwiki ships",
+      "id": "d435d91203512c25",
+      "ingestedAt": "2026-06-02",
+      "invalidatedAt": null,
+      "object": "LLM Wiki",
+      "predicate": "IMPLEMENTS",
+      "quote": "The llmwiki system implements the LLM Wiki concept as a maintained workspace.",
+      "reviewAfter": null,
+      "source": "33b934e6daf69b50",
+      "status": "active",
+      "subject": "llmwiki",
+      "target": "b1a3ff316b0e497c",
+      "validFrom": "2026-06-02",
+      "validTo": null
+    },
+    {
+      "episode": "2026-06-11-streaming.md",
+      "episodeTitle": "Reading note \u2014 streaming knowledge compilation",
+      "id": "b86fa8389e75cbb5",
+      "ingestedAt": "2026-06-11",
+      "invalidatedAt": null,
+      "object": "Compiled wiki",
+      "predicate": "BEST_METHOD",
+      "quote": "Streaming Knowledge Compilation (arXiv 2606.09877) says a compiled wiki is the best method for freshness questions once pages carry valid time.",
+      "reviewAfter": null,
+      "source": "a51850e8cd9a492f",
+      "status": "contradicted",
+      "subject": "Freshness questions",
+      "target": "0a6af0614fab1796",
+      "validFrom": "2026-06-11",
+      "validTo": null
+    },
+    {
+      "episode": "2026-06-11-streaming.md",
+      "episodeTitle": "Reading note \u2014 streaming knowledge compilation",
+      "id": "daf1d076d93d3904",
+      "ingestedAt": "2026-06-11",
+      "invalidatedAt": null,
+      "object": "Valid time",
+      "predicate": "PROPOSES",
+      "quote": "The paper proposes valid time as the missing axis on a compiled wiki.",
+      "reviewAfter": null,
+      "source": "2a83ddd14ed1be46",
+      "status": "active",
+      "subject": "Streaming Knowledge Compilation",
+      "target": "02ea0da4cebe11a4",
+      "validFrom": "2026-06-11",
+      "validTo": null
+    },
+    {
+      "episode": "2026-07-09-progressive.md",
+      "episodeTitle": "Reading note \u2014 progressive disclosure",
+      "id": "50f9cfaa26adee4c",
+      "ingestedAt": "2026-07-09",
+      "invalidatedAt": null,
+      "object": "Layered disclosure",
+      "predicate": "PROPOSES",
+      "quote": "Progressive Disclosure for an LLM-maintained wiki (arXiv 2607.04576) proposes layered disclosure: index, then summary, then the page, then the source quote.",
+      "reviewAfter": null,
+      "source": "47ff75acc2cff3fa",
+      "status": "active",
+      "subject": "Progressive Disclosure",
+      "target": "d85878337f210fa6",
+      "validFrom": "2026-07-09",
+      "validTo": null
+    },
+    {
+      "episode": "2026-10-07-beacon.md",
+      "episodeTitle": "Reading note \u2014 BEACON-SP",
+      "id": "c08686848fcfef22",
+      "ingestedAt": "2026-10-07",
+      "invalidatedAt": null,
+      "object": "Ontology constraint",
+      "predicate": "CONSTRAINS",
+      "quote": "BEACON-SP (arXiv 2610.09026) constrains GraphRAG with an ontology constraint so extracted edges have to match declared types.",
+      "reviewAfter": null,
+      "source": "3aa70fdc0e328be9",
+      "status": "active",
+      "subject": "BEACON-SP",
+      "target": "60b652e3ad7c5f32",
+      "validFrom": "2026-10-07",
+      "validTo": null
+    },
+    {
+      "episode": "2026-10-07-beacon.md",
+      "episodeTitle": "Reading note \u2014 BEACON-SP",
+      "id": "e41da00a63e0d050",
+      "ingestedAt": "2026-10-07",
+      "invalidatedAt": null,
+      "object": "GraphRAG",
+      "predicate": "TARGETS",
+      "quote": "The paper targets GraphRAG as the graph being constrained.",
+      "reviewAfter": null,
+      "source": "3aa70fdc0e328be9",
+      "status": "active",
+      "subject": "BEACON-SP",
+      "target": "dedeacaa41080435",
+      "validFrom": "2026-10-07",
+      "validTo": null
+    },
+    {
+      "episode": "2026-10-14-interactive.md",
+      "episodeTitle": "Reading note \u2014 interactive GraphRAG",
+      "id": "cd7b54934ebc7ce5",
+      "ingestedAt": "2026-10-14",
+      "invalidatedAt": null,
+      "object": "Auditability",
+      "predicate": "INTRODUCES",
+      "quote": "Interactive GraphRAG Workspace (arXiv 2610.23559) introduces auditability so a reader can see why a memory page changed.",
+      "reviewAfter": null,
+      "source": "e221c366fb57a0e6",
+      "status": "active",
+      "subject": "Interactive GraphRAG",
+      "target": "06f14990bc4f00dd",
+      "validFrom": "2026-10-14",
+      "validTo": null
+    }
+  ],
+  "clock": "source-published-date",
+  "contradictions": [
+    {
+      "claimA": "b5be87ce22dc8315",
+      "claimB": "b86fa8389e75cbb5",
+      "detectedAt": "2026-06-11",
+      "id": "1254c465e1fb2ef5"
+    }
+  ],
+  "lint": [
+    {
+      "claimIds": [
+        "b5be87ce22dc8315",
+        "b86fa8389e75cbb5"
+      ],
+      "kind": "contradiction",
+      "message": "Freshness questions BEST_METHOD is both 'Vector RAG' and 'Compiled wiki'.",
+      "paths": [
+        "2026-05-20-freshness-dissent.md",
+        "2026-06-11-streaming.md"
+      ],
+      "severity": "error",
+      "suggestion": "Keep both edges visible and ask a reviewer which value holds.",
+      "visibleFrom": "2026-06-11"
+    },
+    {
+      "claimIds": [],
+      "kind": "orphan",
+      "message": "scratch/parking-lot.md has no entity in the graph and nothing links to it.",
+      "paths": [
+        "scratch/parking-lot.md"
+      ],
+      "severity": "warn",
+      "suggestion": "Link it from an entity page, or drop it in review.",
+      "visibleFrom": "2026-08-01"
+    },
+    {
+      "claimIds": [
+        "2959eaca13ee087f"
+      ],
+      "kind": "stale",
+      "message": "Agent memory MATURITY 'key-value layer' was due for review on 2025-08-01.",
+      "paths": [
+        "2025-04-18-mem0.md"
+      ],
+      "severity": "warn",
+      "suggestion": "Re-read the source and either supersede the claim or extend review_after.",
+      "visibleFrom": "2025-08-01"
+    }
+  ],
+  "nodes": [
+    {
+      "firstSeen": "2025-02-20",
+      "id": "b875571d4b6632c9",
+      "label": "Associative retrieval",
+      "type": "Concept"
+    },
+    {
+      "firstSeen": "2025-02-20",
+      "id": "0e66f8534f8f0251",
+      "label": "HippoRAG 2",
+      "type": "Paper"
+    },
+    {
+      "firstSeen": "2025-02-20",
+      "id": "4e1459ab7daf4442",
+      "label": "Multi-hop QA",
+      "type": "Task"
+    },
+    {
+      "firstSeen": "2025-03-17",
+      "id": "41575af67e3b0220",
+      "label": "Failure taxonomy",
+      "type": "Concept"
+    },
+    {
+      "firstSeen": "2025-03-17",
+      "id": "169c020ed42931d3",
+      "label": "MAST",
+      "type": "Paper"
+    },
+    {
+      "firstSeen": "2025-04-18",
+      "id": "eb6d2e128f721717",
+      "label": "Agent memory",
+      "type": "Concept"
+    },
+    {
+      "firstSeen": "2025-04-18",
+      "id": "577782c3285eb5b9",
+      "label": "Mem0",
+      "type": "Paper"
+    },
+    {
+      "firstSeen": "2025-04-18",
+      "id": "lit:5632530493776183",
+      "label": "key-value layer",
+      "type": "Literal"
+    },
+    {
+      "firstSeen": "2025-11-08",
+      "id": "dedeacaa41080435",
+      "label": "GraphRAG",
+      "type": "Method"
+    },
+    {
+      "firstSeen": "2025-11-08",
+      "id": "0a67edb03c5c51b6",
+      "label": "Ontology Learning for RAG",
+      "type": "Paper"
+    },
+    {
+      "firstSeen": "2025-11-08",
+      "id": "60b652e3ad7c5f32",
+      "label": "Ontology constraint",
+      "type": "Concept"
+    },
+    {
+      "firstSeen": "2026-04-04",
+      "id": "75954fea164bd81a",
+      "label": "Karpathy LLM Wiki",
+      "type": "Paper"
+    },
+    {
+      "firstSeen": "2026-04-04",
+      "id": "e7a0a394d33138de",
+      "label": "Knowledge compilation",
+      "type": "Concept"
+    },
+    {
+      "firstSeen": "2026-04-04",
+      "id": "b1a3ff316b0e497c",
+      "label": "LLM Wiki",
+      "type": "Concept"
+    },
+    {
+      "firstSeen": "2026-04-04",
+      "id": "lit:aee80da86ffbe888",
+      "label": "no open implementation",
+      "type": "Literal"
+    },
+    {
+      "firstSeen": "2026-05-12",
+      "id": "cf71f2e64b55446c",
+      "label": "Synthesis questions",
+      "type": "Task"
+    },
+    {
+      "firstSeen": "2026-05-12",
+      "id": "b68ba55c26bc5fd6",
+      "label": "Vector RAG vs Compiled Wiki",
+      "type": "Paper"
+    },
+    {
+      "firstSeen": "2026-05-20",
+      "id": "a51850e8cd9a492f",
+      "label": "Freshness questions",
+      "type": "Task"
+    },
+    {
+      "firstSeen": "2026-05-20",
+      "id": "3aa200521cde397b",
+      "label": "Vector RAG",
+      "type": "Method"
+    },
+    {
+      "firstSeen": "2026-06-02",
+      "id": "33b934e6daf69b50",
+      "label": "llmwiki",
+      "type": "System"
+    },
+    {
+      "firstSeen": "2026-06-02",
+      "id": "lit:2117b3910a8c212b",
+      "label": "open implementation of the LLM Wiki idea",
+      "type": "Literal"
+    },
+    {
+      "firstSeen": "2026-06-11",
+      "id": "0a6af0614fab1796",
+      "label": "Compiled wiki",
+      "type": "Method"
+    },
+    {
+      "firstSeen": "2026-06-11",
+      "id": "2a83ddd14ed1be46",
+      "label": "Streaming Knowledge Compilation",
+      "type": "Paper"
+    },
+    {
+      "firstSeen": "2026-06-11",
+      "id": "02ea0da4cebe11a4",
+      "label": "Valid time",
+      "type": "Concept"
+    },
+    {
+      "firstSeen": "2026-07-09",
+      "id": "d85878337f210fa6",
+      "label": "Layered disclosure",
+      "type": "Concept"
+    },
+    {
+      "firstSeen": "2026-07-09",
+      "id": "47ff75acc2cff3fa",
+      "label": "Progressive Disclosure",
+      "type": "Paper"
+    },
+    {
+      "firstSeen": "2026-10-07",
+      "id": "3aa70fdc0e328be9",
+      "label": "BEACON-SP",
+      "type": "Paper"
+    },
+    {
+      "firstSeen": "2026-10-14",
+      "id": "06f14990bc4f00dd",
+      "label": "Auditability",
+      "type": "Concept"
+    },
+    {
+      "firstSeen": "2026-10-14",
+      "id": "e221c366fb57a0e6",
+      "label": "Interactive GraphRAG",
+      "type": "Paper"
+    }
+  ],
+  "ontology": "agent-research",
+  "ticks": [
+    "2025-02-20",
+    "2025-03-17",
+    "2025-04-18",
+    "2025-11-08",
+    "2026-04-04",
+    "2026-05-12",
+    "2026-05-20",
+    "2026-06-02",
+    "2026-06-11",
+    "2026-07-09",
+    "2026-08-01",
+    "2026-10-07",
+    "2026-10-14"
+  ]
+}
