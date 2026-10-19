@@ -108,6 +108,23 @@ jobs:
         working-directory: mcp
         run: pytest ../tests/integration/mcp/test_vaultfs_contract.py ../tests/integration/mcp/test_tool_handlers.py ../tests/integration/mcp/test_reply_tool.py ../tests/integration/mcp/test_comments_tool.py ../tests/integration/mcp/test_quiz_lint.py -v
 
+  ontowiki:
+    name: OntoWiki
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install OntoWiki dependencies
+        run: pip install -r ontowiki/requirements.txt -r tests/requirements.txt
+
+      - name: OntoWiki tests
+        run: PYTHONPATH=. pytest tests/ontowiki -v
+
   web:
     name: Web tests (tsc + vitest)
     runs-on: ubuntu-latest
