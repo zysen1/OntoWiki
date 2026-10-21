@@ -7,3 +7,5 @@ uvicorn[standard]==0.46.0
 httpx==0.28.1
 opendataloader-pdf==2.3.0
 pdf-inspector==1.14.0
+# 2026.10.19 drops compromised emSign intermediates (PYSEC-2026-4320).
+certifi==2026.10.19
