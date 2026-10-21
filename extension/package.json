@@ -33,9 +33,9 @@
     "node-forge": "file:vendor/node-forge"
   },
   "overrides": {
-    "vite": "6.4.3",
+    "vite": "6.4.5",
     "wxt": {
-      "vite": "6.4.3"
+      "vite": "6.4.5"
     },
     "esbuild": "0.28.1",
     "shell-quote": "1.12.0",
