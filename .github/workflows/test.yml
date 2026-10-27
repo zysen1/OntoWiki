@@ -78,6 +78,7 @@ jobs:
           tests/unit/test_ocr_routing.py
           tests/unit/test_local_file_serving.py
           tests/unit/test_html_parser_tables.py
+          tests/unit/test_security_schedule_gate.py
           tests/unit/test_local_content_writes.py
           tests/integration/test_converter_isolation.py
           tests/integration/test_converter_service.py

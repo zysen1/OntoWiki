@@ -6,13 +6,18 @@ on:
   pull_request:
     branches: [master, dev]
   schedule:
-    # Daily at 06:00 UTC — catches advisories published after we last pushed.
+    # Daily at 06:00 UTC. The scan always runs. Push and pull_request fail on
+    # every advisory outside .github/security-allowlist.txt. The schedule
+    # fails — and therefore emails — only when an advisory is outside that
+    # allowlist and was not in the previous scheduled scan. Do not remove
+    # this cron or mark the scanners continue-on-error for every event.
     - cron: "0 6 * * *"
 
 permissions:
   contents: read
-  security-events: write   # required for uploading SARIF to GitHub Security tab
-  pull-requests: write     # required for dependency-review-action PR comments
+  actions: read             # previous scheduled finding artifacts
+  security-events: write    # required for uploading SARIF to GitHub Security tab
+  pull-requests: write      # required for dependency-review-action PR comments
 
 jobs:
   osv-scan:
@@ -21,10 +26,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # OSV-Scanner ignores ids in this file before it decides to fail.
+      # The allowlist is empty unless an advisory has no patched release.
+      - name: Write OSV ignore config
+        run: python3 .github/security_schedule_gate.py write-osv-config .github/security-allowlist.txt osv-scanner.toml
+
       # Scans every lockfile in the repo. Single command covers npm + pip +
       # cargo + go etc. — uses Google's OSV.dev advisory DB which aggregates
       # GitHub Advisories, PyPA, RustSec, etc.
+      # On the schedule, a repeated finding must not fail the job again.
+      # The gate below compares this SARIF with the previous scheduled run.
       - name: Run OSV-Scanner
+        id: osv
+        continue-on-error: ${{ github.event_name == 'schedule' }}
         uses: google/osv-scanner-action/osv-scanner-action@v2.0.2
         with:
           scan-args: |-
@@ -34,12 +48,46 @@ jobs:
             ./
 
       # Upload results to GitHub's Security tab so they show up alongside
-      # Dependabot alerts and can be triaged in one place.
+      # Dependabot alerts and can be triaged in one place. Code scanning
+      # opens an alert when a finding is new.
       - name: Upload SARIF
         if: always() && hashFiles('results.sarif') != ''
         uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: results.sarif
+
+      - name: Alert only on new OSV advisories
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          if [ "${{ steps.osv.outcome }}" = "failure" ] && [ ! -s results.sarif ]; then
+            echo "OSV scanner failed without a SARIF report."
+            exit 1
+          fi
+          if [ -f results.sarif ]; then
+            python3 .github/security_schedule_gate.py extract-sarif results.sarif > "$RUNNER_TEMP/findings.txt"
+          else
+            : > "$RUNNER_TEMP/findings.txt"
+          fi
+          bash .github/download_previous_findings.sh \
+            security-schedule-osv "$RUNNER_TEMP/previous.txt"
+          cp "$RUNNER_TEMP/findings.txt" scheduled-findings.txt
+          args=(--mode schedule --findings "$RUNNER_TEMP/findings.txt" --previous "$RUNNER_TEMP/previous.txt" --allowlist .github/security-allowlist.txt)
+          if [ "${{ steps.osv.outcome }}" = "failure" ]; then
+            args+=(--audit-failed)
+          fi
+          python3 .github/security_schedule_gate.py gate "${args[@]}"
+
+      - name: Upload scheduled OSV finding set
+        if: github.event_name == 'schedule' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-schedule-osv
+          path: scheduled-findings.txt
+          retention-days: 90
+          if-no-files-found: warn
 
   dependency-review:
     name: Dependency Review (PR diff)
@@ -110,7 +158,52 @@ jobs:
 
       - name: Audit (fail on moderate+)
         working-directory: ${{ matrix.package_dir }}
-        run: npm audit --audit-level=moderate
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SECURITY_EVENT: ${{ github.event_name }}
+          SECURITY_ARTIFACT: security-schedule-npm-${{ matrix.package_dir }}
+        run: |
+          set -euo pipefail
+          set +e
+          npm audit --audit-level=moderate --json > "$RUNNER_TEMP/npm-audit.json"
+          code=$?
+          set -e
+          if [ "$code" -ne 0 ] && [ "$code" -ne 1 ]; then
+            echo "npm audit failed (exit $code)"
+            exit "$code"
+          fi
+          if [ "$code" -ne 0 ]; then
+            npm audit --audit-level=moderate || true
+          else
+            echo "found 0 vulnerabilities"
+          fi
+          python3 "$GITHUB_WORKSPACE/.github/security_schedule_gate.py" extract-npm \
+            "$RUNNER_TEMP/npm-audit.json" > "$RUNNER_TEMP/findings.txt"
+          args=(
+            --findings "$RUNNER_TEMP/findings.txt"
+            --allowlist "$GITHUB_WORKSPACE/.github/security-allowlist.txt"
+          )
+          if [ "$code" -ne 0 ]; then
+            args+=(--audit-failed)
+          fi
+          if [ "$SECURITY_EVENT" = "schedule" ]; then
+            bash "$GITHUB_WORKSPACE/.github/download_previous_findings.sh" \
+              "$SECURITY_ARTIFACT" "$RUNNER_TEMP/previous.txt"
+            cp "$RUNNER_TEMP/findings.txt" "$GITHUB_WORKSPACE/scheduled-findings.txt"
+            args+=(--mode schedule --previous "$RUNNER_TEMP/previous.txt")
+          else
+            args+=(--mode strict)
+          fi
+          python3 "$GITHUB_WORKSPACE/.github/security_schedule_gate.py" gate "${args[@]}"
+
+      - name: Upload scheduled npm finding set
+        if: github.event_name == 'schedule' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-schedule-npm-${{ matrix.package_dir }}
+          path: scheduled-findings.txt
+          retention-days: 90
+          if-no-files-found: warn
 
   pip-audit:
     name: pip-audit (api + mcp + converter + tests + ontowiki)
@@ -129,11 +222,55 @@ jobs:
       - name: Install pip-audit
         run: pip install pip-audit
 
-      # api/ ships a hash-locked requirements.lock; others ship requirements.txt.
+      # api/ and mcp/ ship a hash-locked requirements.lock; others ship requirements.txt.
       - name: Audit
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SECURITY_EVENT: ${{ github.event_name }}
+          SECURITY_ARTIFACT: security-schedule-pip-${{ matrix.path }}
         run: |
-          if [ -f "${{ matrix.path }}/requirements.lock" ]; then
-            pip-audit -r "${{ matrix.path }}/requirements.lock" --strict --desc
-          else
-            pip-audit -r "${{ matrix.path }}/requirements.txt" --strict --desc
+          set -euo pipefail
+          req="${{ matrix.path }}/requirements.lock"
+          if [ ! -f "$req" ]; then
+            req="${{ matrix.path }}/requirements.txt"
           fi
+          set +e
+          pip-audit -r "$req" --strict --format json -o "$RUNNER_TEMP/pip-audit.json"
+          code=$?
+          set -e
+          if [ "$code" -ne 0 ] && [ "$code" -ne 1 ]; then
+            echo "pip-audit failed (exit $code)"
+            exit "$code"
+          fi
+          if [ "$code" -ne 0 ]; then
+            pip-audit -r "$req" --strict --desc || true
+          else
+            echo "No known vulnerabilities found"
+          fi
+          python3 .github/security_schedule_gate.py extract-pip \
+            "$RUNNER_TEMP/pip-audit.json" > "$RUNNER_TEMP/findings.txt"
+          args=(
+            --findings "$RUNNER_TEMP/findings.txt"
+            --allowlist .github/security-allowlist.txt
+          )
+          if [ "$code" -ne 0 ]; then
+            args+=(--audit-failed)
+          fi
+          if [ "$SECURITY_EVENT" = "schedule" ]; then
+            bash .github/download_previous_findings.sh \
+              "$SECURITY_ARTIFACT" "$RUNNER_TEMP/previous.txt"
+            cp "$RUNNER_TEMP/findings.txt" scheduled-findings.txt
+            args+=(--mode schedule --previous "$RUNNER_TEMP/previous.txt")
+          else
+            args+=(--mode strict)
+          fi
+          python3 .github/security_schedule_gate.py gate "${args[@]}"
+
+      - name: Upload scheduled pip finding set
+        if: github.event_name == 'schedule' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-schedule-pip-${{ matrix.path }}
+          path: scheduled-findings.txt
+          retention-days: 90
+          if-no-files-found: warn
