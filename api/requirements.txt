@@ -8,7 +8,8 @@ httpx==0.28.1
 pydantic==2.13.4
 pydantic-settings==2.14.2
 python-multipart==0.0.31
-logfire[fastapi,asyncpg]==4.32.1
+# 5.2.0 is the first release that allows OpenTelemetry 1.45.
+logfire[fastapi,asyncpg]==5.2.0
 sentry-sdk[fastapi]==2.59.0
 pyyaml==6.0.3
 aioboto3==15.5.0
@@ -28,3 +29,7 @@ requests==2.33.1
 urllib3==2.8.0
 # 2026.10.19 drops compromised emSign intermediates (PYSEC-2026-4320).
 certifi==2026.10.19
+# 1.45.1 fixes CVE-2026-114603 / GHSA-xcq7-p3pf-p88h (quadratic tracestate parsing).
+opentelemetry-api==1.45.1
+opentelemetry-sdk==1.45.1
+opentelemetry-exporter-otlp-proto-http==1.45.1

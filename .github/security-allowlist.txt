@@ -1,0 +1,17 @@
+# Advisories with no patched release.
+#
+# One id per line: GHSA-..., CVE-..., or PYSEC-.... Blank lines and lines
+# starting with # are ignored. List every id a scanner actually emits for
+# that advisory (OSV may report the CVE while npm audit reports the GHSA).
+#
+# An entry suppresses that advisory on push, pull request, and the daily
+# schedule. Do not add an id that has a patched release — bump the lockfile
+# instead, and delete the entry once a patch exists.
+#
+# The scheduled Security workflow still scans every lockfile. It fails, and
+# therefore emails, only for an advisory that is not listed here and was
+# absent from the previous scheduled scan. Push and pull_request fail on
+# every advisory that is not listed here.
+#
+# Nothing is ignored right now. The advisories that failed the scheduled run
+# on 3706ea5 all have patched releases and are pinned in the lockfiles.
